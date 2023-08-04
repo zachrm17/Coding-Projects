@@ -1,0 +1,6 @@
+Tic Tac Toe Game
+- Designed to be played by two players
+- Program randomly chooses who goes first
+- Will automatically check if either Player 1 or Player 2 has won
+- Will also check if there is a tie
+- When game is won or in a draw, program will ask the players if they want to play again

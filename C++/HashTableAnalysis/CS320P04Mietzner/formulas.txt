@@ -1,0 +1,5 @@
+load factor = (# of entered elements) / (table size)
+unsuccessful probing for separate chaining is theoretically (1 + load factor)
+successful probing for separate chaining is theoretically (1 + (load factor / 2))
+successful probing for linear is theoretically 0.5*(1 + (1 / (1 - load factor)))
+unsuccessful probing for linear is theoretically 0.5*(1 + (1 / (1 - load factor)^2))

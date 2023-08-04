@@ -1,0 +1,19 @@
+Using FileName.txt
+
+Closest points are: (8.08 1.93) and (8.59 1.74) with distance = 0.544243
+
+Using FileName2.txt
+
+Closest points are: (69 59) and (73 58) with distance = 4.12311
+
+Using FileName3.txt
+
+Closest points are: (314 117) and (316 120) with distance = 3.60555
+
+Using FileName4.txt
+
+Closest points are: (484 16) and (485 17) with distance = 1.41421
+
+Using FileName5.txt
+
+Closest points are: (1464 1802) and (1465 1800) with distance = 2.23607

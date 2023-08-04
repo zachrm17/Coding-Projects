@@ -1,0 +1,198 @@
+﻿@model QuestionViewModel
+@using SteelTank_TestingEnvironment.Data.Models
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px;">
+
+    <form asp-controller="Admin" asp-action="SaveQuestion" method="post" enctype="multipart/form-data">
+        <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Edit Question</h3>
+
+        <input type="hidden" asp-for="QuestionGroup.GroupId" value="@Model.QuestionGroup.GroupId" />
+        <input type="hidden" asp-for="ExamId" value="@Model.ExamId" />
+
+        <div class="bg-white p-5">
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label" for="examDescInput">Question Group Text</label>
+                    <textarea asp-for="QuestionGroup.Text" class="form-control" id="examDescInput" rows=3></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label">Choose Files</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            @{
+                                List<ImageFile> files = ViewData["QuestionImages"] as List<ImageFile>;
+                                if (ViewData["QuestionImages"] == null || files.Count() == 0)
+                                {
+                                    <span class="input-group-text">None</span>
+                                }
+                                else
+                                {
+                                    <span class="input-group-text">@files[0].Name, +@(files.Count() - 1)</span>
+                                }
+                            }
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" asp-for="QuestionGroup.Files" class="custom-file-input" id="questionFiles" accept=".jpg, .jpeg, .png" multiple/>
+                            <label class="custom-file-label">Choose files</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+
+    <h3 class="p-3 text-white bg-primary mb-0">Edit Question Parts</h3>
+    <div class="bg-white p-5">
+        <form asp-controller="Admin" asp-action="EditQuestionPart" method="post">
+            <input type="hidden" asp-for="QuestionGroup.GroupId" />
+            <input type="hidden" asp-for="ExamId" />
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label" for="examDescInput">Question Part Text</label>
+                    <textarea asp-for="QuestionPart.Text" class="form-control" id="examDescInput" rows=3></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label" for="examDescInput">Question Score</label>
+                    <input class="form-control" type="text" asp-for="QuestionPart.Score" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label class="form-label">Question Part Type: </label>
+                    <input type="radio" asp-for="QuestionPart.SelectedChoice" value="@Model.QuestionPart.Choices[0].choiceId" />
+                    <label>Multiple Choice</label>
+
+                    <input type="radio" asp-for="QuestionPart.SelectedChoice" value="@Model.QuestionPart.Choices[1].choiceId" />
+                    <label>Text Box</label>
+                </div>
+            </div>
+            <div class="row" id="multipleChoice">
+                <div class="form-group col-md-6 mb-3">
+                    <div class="input-group mb-2">
+                        <input class="form-control" type="text" asp-for="QuestionPart.ChoiceA" required/>
+                        <span class="input-group-text"><b>Answer</b></span>
+                    </div>
+                    <input class="form-control  mb-2" type="text" asp-for="QuestionPart.ChoiceB" />
+                    <input class="form-control mb-2" type="text" asp-for="QuestionPart.ChoiceC" />
+                    <input class="form-control" type="text" asp-for="QuestionPart.ChoiceD" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <small class="text-muted">Note: Only the option text fields with content will be added to the question part.</small>
+                </div>
+            </div>
+
+            <button class="btn btn-primary mb-3">Add Part</button>
+        </form>
+
+
+
+        @if (ViewData["QuestionParts"] != null)
+        {
+            <ul class="list-group mb-2">
+                @foreach (var question in ViewData["QuestionParts"] as List<Question>)
+                {
+                    <li class="list-group-item">
+                        <div class="row mb-2">
+                            <div class="col-9">
+                                <p class="m-0"><b>@question.Id</b>. @question.Text </p>
+                                @if (question.IsTextEntry == true)
+                                {
+                                    <small class="text-muted"> Text Box: </small>
+                                }
+                                else
+                                {
+                                    <small class="text-muted">Multiple Choice: </small>
+                                }
+                                <small class="text-muted">@question.Points Points</small>
+                            </div>
+                            <div class="col-3 d-flex align-items-center justify-content-end">
+                                <span><a asp-action="DeleteQuestionPart" asp-controller="Admin" asp-route-id="@question.Id" asp-route-questionGroupId="@Model.QuestionGroup.GroupId" asp-route-examId="@Model.ExamId">Delete</a></span>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            @foreach (var answer in question.Answers)
+                            {
+                                <div class="input-group mb-2">
+                                    <input class="form-control" type="text" disabled value="@answer.Text" />
+                                    @if (question.AnswerId == answer.Id)
+                                    {
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><b>Answer</b></span>
+                                        </div>
+
+                                    }
+
+                                </div>
+                            }
+
+
+                        </div>
+
+
+                    </li>
+
+                }
+            </ul>
+        }
+
+
+        @*<ul class="list-group mb-2">
+                <li class="list-group-item">
+                    <div class="row mb-2">
+                        <div class="col-9">
+                            <small class="text-muted">Multiple Choice</small>
+                        </div>
+                        <div class="col-3 d-flex align-items-center justify-contenend">
+                            <span><a href="#">Delete</a></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-2">
+                            <input class="form-control" type="text" disabled value="Iron" />
+                            <span class="input-group-text"><b>Answer</b></span>
+                        </div>
+                        <div class="input-group mb-2">
+                            <input class="form-control" type="text" disabled value="Copper" />
+                        </div>
+                        <div class="input-group">
+                            <input class="form-control" type="text" disabled value="Titanium" />
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row mb-2">
+                        <div class="col-9">
+                            <p class="m-0"><b>(ID: 123)</b> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+                            <small class="text-muted">Text Input</small>
+                        </div>
+                        <div class="col-3 d-flex align-items-center justify-content-end">
+                            <span><a href="#">Delete</a></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-2">
+                            <input class="form-control" type="text" disabled value="3.99" />
+                            <span class="input-group-text"><b>Answer</b></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>*@
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $("#questionFiles").on('change', function () {
+            var fileName = $(this).val();
+            var count = $(this)[0].files.length;
+            $(this).next('.custom-file-label').html(fileName + ", +" + (count - 1));
+        })
+    </script>
+}

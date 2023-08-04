@@ -1,0 +1,119 @@
+﻿@model AccountViewModel
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Edit Profile Info</h3>
+    <div class="bg-white p-5">
+        <form asp-controller="Home" asp-action="Profile" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label class="form-label">Fist Name: @Model.FirstName *required*</label>
+                <input class="form-control" type="text" asp-for="FirstName" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Last Name: @Model.LastName *required*</label>
+                <input class="form-control" type="text" asp-for="LastName" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="examNameInput">Email: @Model.EmailAddress *required*</label>
+                <input class="form-control" type="text" asp-for="EmailAddress" required />
+            </div>
+
+
+           @*<div class="form-group">
+                <label class="form-label" for="examNameInput">Password: </label>
+                <input class="form-control" type="password" asp-for="Password" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="examNameInput">Password Confirm: </label>
+                <>
+                <input class="form-control" type="password" asp-for="PasswordConfirm" />
+            </div>*@
+
+            <div class="form-group">
+                <label class="form-label">File 1:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        @if (Model.UserFile1 == null)
+                        {
+                            <span class="input-group-text">None</span>
+                        }
+                        else
+                        {
+                            <span class="input-group-text">@Model.UserFile1.Name</span>
+                        }
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" asp-for="FileInput1" class="custom-file-input" id="fileInput1" accept=".pdf"/>
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">File 2:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        @if (Model.UserFile2 == null)
+                        {
+                            <span class="input-group-text">None</span>
+                        }
+                        else
+                        {
+                            <span class="input-group-text">@Model.UserFile2.Name</span>
+                        }
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" asp-for="FileInput2" class="custom-file-input" id="fileInput2" accept=".pdf"/>
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">File 3:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        @if (Model.UserFile3 == null)
+                        {
+                            <span class="input-group-text">None</span>
+                        }
+                        else
+                        {
+                            <span class="input-group-text">@Model.UserFile3.Name</span>
+                        }
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" asp-for="FileInput3" class="custom-file-input" id="fileInput3" accept=".pdf"/>
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="mb-3 btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+<script type="text/javascript">
+    $("#fileInput1").on('change', function () {
+        var fileName = $(this).val();
+        $(this).next('.custom-file-label').html(fileName);
+    })
+
+    $("#fileInput2").on('change', function () {
+        var fileName = $(this).val();
+        $(this).next('.custom-file-label').html(fileName);
+    })
+
+    $("#fileInput3").on('change', function () {
+        var fileName = $(this).val();
+        $(this).next('.custom-file-label').html(fileName);
+    })
+</script>
+} 

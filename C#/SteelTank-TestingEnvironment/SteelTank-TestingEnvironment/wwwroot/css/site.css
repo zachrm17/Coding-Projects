@@ -1,0 +1,40 @@
+﻿:root {
+    --background-color: #ffffff;
+    --primary-color: #e4eaf5;
+    --secondary-color: #FFF;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 375px;
+    margin: auto;
+    display: block;
+}
+
+.error-validation ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*
+.error-validation ul:not(:last-child)
+{
+}
+*/

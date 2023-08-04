@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Cathodic Protection Exam</title>
+
+    <link rel="stylesheet" href="~/css/site.css"  asp-append-version="true"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/Images/STISPFA_Logo.png" width="150" /> Cathodic Protection Exam</a>
+                <div class="justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                        id="UsersDropdown" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                    </button>
+                                <ul class="dropdown-menu" aria-labelledby="UsersDropdown">
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Admin">Admin</a></li>
+                                    }
+
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Profile">Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Auth" asp-action="Logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        } else {
+                                <li class="nav-item"><a class="nav-link" asp-controller="Auth" asp-action="Login">Login</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    <footer class="border-top footer text-muted bg-white mt-5">
+        <div class="container">
+            &copy; 2021 - Steel Tank Institute - <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        function confirmClick() {
+            return confirm("Are you sure?");
+        }
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

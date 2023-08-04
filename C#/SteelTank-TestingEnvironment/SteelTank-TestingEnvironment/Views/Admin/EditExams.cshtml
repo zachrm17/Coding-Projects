@@ -1,0 +1,26 @@
+﻿@using SteelTank_TestingEnvironment.Data.Models
+
+@{
+    ViewData["Title"] = "Edit Exams";
+}
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Manage Exams</h3>
+    <div class="bg-white p-5">
+        <a asp-controller="Admin" asp-action="EditExam" class="mb-3 btn btn-primary">Add Exam</a>
+        <ul class="list-group">
+            @if (ViewData["exams"] != null)
+            {
+                foreach (var exam in ViewData["exams"] as List<Exam>)
+                {
+                    <li class="list-group-item">
+                        <p class="float-left font-weight-bold m-0">@exam.Name</p>
+                        <div class="float-right">
+                            <a asp-controller="Admin" asp-action="EditExam" asp-route-id="@exam.Id">Edit</a> | <a onclick="return confirmClick();" asp-controller="Admin" asp-action="DeleteExam" asp-route-id="@exam.Id">Delete</a>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

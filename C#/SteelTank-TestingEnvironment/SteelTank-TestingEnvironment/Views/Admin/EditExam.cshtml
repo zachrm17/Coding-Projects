@@ -1,0 +1,89 @@
+﻿@model ExamViewModel
+@using SteelTank_TestingEnvironment.Data.Models;
+@{
+    ViewData["Title"] = "Edit Exam";
+}
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Edit Exam Info</h3>
+
+    <div class="bg-white p-5">
+        <form asp-controller="Admin" asp-action="EditExam" method="post">
+            <input type="hidden" asp-for="Id" value="@Model.Id" required />
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="examNameInput">Exam Name</label>
+                    <input class="form-control" type="text" asp-for="Name" value="@Model.Name" required />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="examDescInput">Exam Description</label>
+                    <textarea class="form-control" id="examDescInput" rows="4" asp-for="Description" required>@Model.Description</textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="examTimeInput">Exam Duration</label>
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="hours" asp-for="Hours" value="@Model.Hours" aria-describedby="hours-label" required />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="hours-label">Hours</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="minutes" asp-for="Minutes" value="@Model.Minutes" aria-describedby="minutes-label" required />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="minutes-label">Minutes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary mb-2" type="submit">Save</button>
+        </form>
+    </div>
+
+    <h3 class="p-3 text-white bg-primary mb-0">Edit Exam Questions</h3>
+    <div class="bg-white p-5">
+        <a class="btn btn-primary mb-3" asp-controller="Admin" asp-action="EditQuestion" asp-route-examId="@Model.Id">Add Question</a>
+        <ul class="list-group">
+            @if (ViewData["QuestionGroups"] != null)
+            {
+                foreach (var questionGroup in ViewData["QuestionGroups"] as List<QuestionGroup>)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="m-0"><b>(ID: @questionGroup.Id)</b>@questionGroup.Text</p>
+                                @*<small class="text-muted">5 Parts &bull; Diagram.jpg</small>*@
+                            </div>
+                            <div class="col-3 d-flex align-items-center justify-content-end">
+                                <span><a asp-controller="Admin" asp-action="editQuestion" asp-route-examId="@Model.Id" asp-route-id="@questionGroup.Id">Edit</a> | <a onclick="return confirmClick();" asp-controller="Admin" asp-action="DeleteQuestionGroups" asp-route-examId="@Model.Id" asp-route-id="@questionGroup.Id">Delete</a></span>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @*<nav>
+            <ul class="mt-4 pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>*@
+    </div>
+</div>

@@ -1,0 +1,99 @@
+﻿@model AccountViewModel 
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Edit User Info</h3>
+    <div class="bg-white p-5">
+        <form asp-controller="Admin" asp-action="EditUser" method="post">
+            <input type="hidden" asp-for="Id" value="@Model.Id" required />
+
+            <div class="form-group">
+                <label class="form-label">First Name: @Model.FirstName *required*</label>
+                <input class="form-control" type="text" asp-for="FirstName" value="@Model.FirstName" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Last Name: @Model.LastName *required*</label>
+                <input class="form-control" type="text" asp-for="LastName" value="@Model.LastName" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email: @Model.EmailAddress *required*</label>
+                <input class="form-control" type="email" asp-for="EmailAddress" value="@Model.EmailAddress" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Phone Number: @Model.PhoneNumber</label>
+                <input class="form-control" type="tel" asp-for="PhoneNumber" value="@Model.PhoneNumber" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Fax: @Model.FaxNumber</label>
+                <input class="form-control" type="text" asp-for="FaxNumber" value="@Model.FaxNumber" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Address 1: @Model.Address1</label>
+                <input class="form-control" type="text" asp-for="Address1" value="@Model.Address1" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Address 2: @Model.Address2</label>
+                <input class="form-control" type="text" asp-for="Address2" value="@Model.Address2" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">City: @Model.City</label>
+                <input class="form-control" type="text" asp-for="City" value="@Model.City" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">State: @Model.State</label>
+                <input class="form-control" type="text" asp-for="State" value="@Model.State" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Zip: @Model.Zip</label>
+                <input class="form-control" type="text" asp-for="Zip" value="@Model.Zip" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Company: @Model.Company</label>
+                <input class="form-control" type="text" asp-for="Company" value="@Model.Company" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Certification Number: @Model.CertificationNumber</label>
+                <input class="form-control" type="text" asp-for="CertificationNumber" value="@Model.CertificationNumber" />
+            </div>
+
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" asp-for="AccountRole" />
+                <label class="form-check-label"> Is Administrator</label>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">New Password: *required for new accounts*</label>
+                <input class="form-control" type="password" asp-for="Password"/>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Confirm Password: *required for new accounts*</label>
+                <input class="form-control" type="password" asp-for="PasswordConfirm"/>
+            </div>
+
+            <button type="submit" class="mb-3 btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        @if(ViewData["error"] != null)
+        {
+            <Text> 
+                alert("@ViewData["error"]");
+            </Text>
+        }
+    </script>
+}

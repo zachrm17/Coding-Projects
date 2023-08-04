@@ -1,0 +1,85 @@
+﻿@using SteelTank_TestingEnvironment.Data.Models
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Manage Users</h3>
+    <div class="bg-white p-5">
+        <a asp-controller="Admin" asp-action="EditUser" class="mb-3 btn btn-primary">Add Users</a>
+
+        @using (Html.BeginForm(method: FormMethod.Get))
+        {
+            <div class="input-group mb-3">
+                @Html.TextBox("search", null, new { @class = "form-control", @placeholder="Search..." })
+                <div class="input-group-append">
+                    <button name="filter" value="email" class="btn btn-outline-secondary" type="submit">Search Email</button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button name="filter" value="last" class="dropdown-item" type="submit">Last Name</button>
+                        <button name="filter" value="first" class="dropdown-item" type="submit">First Name</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <ul class="list-group">
+            @{PageList<ApplicationUser> pages = ViewData["users"] as PageList<ApplicationUser>; }
+            @if (ViewData["users"] != null)
+            {
+                foreach (var users in pages.PageItems as List<ApplicationUser>)
+                {
+                    <li class="list-group-item">
+                        <p class="float-left font-weight-bold m-0">@users.LastName, @users.FirstName - @users.UserName</p>
+                        <div class="float-right">
+                            <a asp-controller="Admin" asp-action="EditUser" asp-route-id="@users.Id">Edit</a> | <a asp-controller="Admin" asp-action="EditProcess" asp-route-id="@users.Id">Process</a> | <a onclick="return confirmClick();" asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@users.Id">Delete</a>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+
+        <nav aria-label="...">
+            <ul class="pagination mt-3">
+                @if (pages.PageIndex <= 1)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Previous</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Admin" asp-action="EditUsers" asp-route-page="@(pages.PageIndex-1)" asp-route-search="@ViewData["Search"]" asp-route-filter="@ViewData["Filter"]">Previous</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= pages.PageCount; i++)
+                {
+                    if (i == pages.PageIndex)
+                    {
+                        <li class="page-item active"><a class="page-link" href="#">@i</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" asp-controller="Admin" asp-action="EditUsers" asp-route-page="@i" asp-route-search="@ViewData["Search"]" asp-route-filter="@ViewData["Filter"]">@i</a></li>
+                    }
+                }
+
+                @if (pages.PageIndex >= pages.PageCount)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Admin" asp-action="EditUsers" asp-route-page="@(pages.PageIndex+1)" asp-route-search="@ViewData["Search"]" asp-route-filter="@ViewData["Filter"]">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿  Bacon.cpp
+  Crust.cpp
+  DecoratedPizza.cpp
+  GreenPeppers.cpp
+  Ham.cpp
+  Mushrooms.cpp
+  Onions.cpp
+  Pepperoni.cpp
+  Pineapple.cpp
+  Pizza.cpp
+  PizzaBuilder.cpp
+  PizzaDiscount.cpp
+  PizzaDriver.cpp
+  PizzaFactory.cpp
+  PizzaFee.cpp
+  PizzaTopping.cpp
+  Sausage.cpp
+  SpecialtyPizza.cpp
+  Generating Code...
+  P04Mietzner.vcxproj -> C:\Users\zmiet\OneDrive\Desktop\CS 318\Projects\P04Mietzner\Debug\P04Mietzner.exe

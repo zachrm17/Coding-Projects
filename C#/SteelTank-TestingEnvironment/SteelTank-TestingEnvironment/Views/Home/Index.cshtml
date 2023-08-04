@@ -1,0 +1,77 @@
+﻿@using SteelTank_TestingEnvironment.Data.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Home</h3>
+
+    <div class="bg-white p-5">
+        <div class="alert alert-warning">
+            <b>IMPORTANT:</b> You have 60 days from the time when your payment is received to begin to take the exams. You may not begin an exam until the site information you have submitted has been approved. Once you begin either Exam A or Exam B, you have only 24 hours to complete that exam. The expiration date and time above tell you how much time you have left. Please note that the expiration time is CENTRAL time.
+        </div>
+
+        <ul class="mt-5 nav nav-tabs" id="nav-tab" role="tablist">
+            <li class="nav-item">
+                <a href="#CurrentExams" class="nav-link active" data-toggle="tab" role="tab" aria-controls="CurrentExams" aria-selected="true" id="nav-tab-current">Current Exams</a>
+            </li>
+            <li class="nav-item">
+                <a href="#PreviousExams" class="nav-link" data-toggle="tab" role="tab" aria-controls="PreviousExams" aria-selected="false" id="nav-tab-previous">Previous Exams</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="CurrentExams" aria-labelledby="nav-tab-current" role="tabpanel">
+                <ul class="mt-4 list-group">
+                    @{
+                        if (ViewData["CurrentExams"] as List<Registration> == null || (ViewData["CurrentExams"] as List<Registration>).Count() == 0)
+                        {
+                            <li class="list-group-item">Empty</li>
+                        }
+                        else
+                        {
+                            foreach (var exam in ViewData["CurrentExams"] as List<Registration>)
+                            {
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="font-weight-bold mb-0">@exam.Exam.Name</p>
+                                            <small class="text-muted">Expires @exam.ExpireDate.ToString()</small>
+                                        </div>
+                                        <a asp-controller="Exam" asp-action="ExamInfo" asp-route-registrationId="@exam.Id">Enter Exam</a>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+
+            <div class="tab-pane fade" id="PreviousExams" aria-labelledby="nav-tab-previous" role="tabpanel">
+                <ul class="mt-4 list-group">
+                    @{
+                        if (ViewData["PreviousExams"] as List<Registration> == null || (ViewData["PreviousExams"] as List<Registration>).Count() == 0)
+                        {
+                            <li class="list-group-item">Empty</li>
+                        }
+                        else
+                        {
+                            foreach (var exam in ViewData["PreviousExams"] as List<Registration>)
+                            {
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="font-weight-bold mb-0">@exam.Exam.Name</p>
+                                            <small class="text-muted">Expires @exam.ExpireDate.ToString()</small>
+                                        </div>
+                                        <p>@exam.Score %</p>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

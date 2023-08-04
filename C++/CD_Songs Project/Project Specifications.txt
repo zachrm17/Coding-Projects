@@ -1,0 +1,31 @@
+My good friend is a fan of a rather obscure branch of music - namely "Death Metal", that is one rabbit hole I refuse to go down.  That being said, he has made a great text file for us to use and one thing you cannot get enough of in CS is really good data sets.
+
+Your first program is designed to challenge you with the creation of a dataset to store and search all of the cd's in the attached cds.txt file. As part of this program you will create the following files, classes and functions:
+
+Song.h / Song.cpp
+Song.h should define a "Song" class with the functions necessary to create, display and destroy individual songs.  A song is hereby defined as being a string data type containing the name of the song and a second string containing the length of the song. Song.cpp should implement these functions
+
+Songs.h / Songs.cpp
+Songs.h should define a class designed to hold a large amount variables of the Song data type. The total number of Song in a collection will be passed by the user when Songs is created.  Functions for creating, displaying and destroying Songs structures should be included in the .h file. In addition, a helper function to add a created song to the end of your current Songs variable should also be included. These functions should all be implemented in the Songs.cpp file
+
+CD.h / CD.cpp 
+CD.h should define a "CD" class  with the functions necessary to create, display and destroy individual CD. The functions should be implemented in the CD.cpp file.  A CD is hereby defined as holding (please note this is the same order they are stored in the file): 
+
+A Title
+An Artist
+A Release Date
+A Rating
+A Number of Songs
+A Collection of individual songs
+
+CDs.h / CDs.cpp
+
+CDs.h should define a "CDs" class with the functions necessary to create, display and destroy a large number of individual CD variables. An important thing to note is that the total number of CD should be unknown, so the easiest solution will be to start at a relatively small size (say 2) and then have the array double in size as necessary, so a resize function is also going to be necessary.  To make this work, the create function should take the filename containing all the CD information as its only parameter. A final 2 functions will allow us to search the finished structure. These functions should be overloaded, with one accepting the name of a particular band and returning all albums by that band.  The second function should take in a rating and return all albums with a rating greater than OR equal to that rating.
+
+Driver.cpp
+This should be a program that reads in the name of the text file containing the cds (cds.txt in our example but this could change) then it should loop through a menu allowing the user to search the newly created database or terminate the program. If the user chooses to end, they should be given a nice goodbye message and all data should be cleared from memory before the program ends.
+Now, just because I can, I am also insisting that ALL of the create functions you are dealing with create and return pointers to the data rather than the data type themselves.  This will hopefully de-mystify them and make it easier moving forward.
+
+What to turn in?
+
+A Zipped folder (P01Brown.zip) containing ALL source code necessary to run your solution should be uploaded to the Assignment folder. In addition, a printed copy of all of your code should be dropped off in my office no later than the school day following the deadline.

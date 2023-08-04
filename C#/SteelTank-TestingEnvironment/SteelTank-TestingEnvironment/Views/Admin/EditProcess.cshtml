@@ -1,0 +1,152 @@
+﻿@using SteelTank_TestingEnvironment.Data.Models
+@model ApplicationUser
+<div class="container mt-5 rounded shadow-lg" style="padding: 0px">
+    <h3 class="p-3 text-white bg-primary mb-0 rounded-top">Edit Process</h3>
+    <div class="bg-white p-5">
+        <h3>User: @Model.FirstName @Model.LastName</h3>
+
+        @{
+            if (ViewData["file1"] != null)
+            {
+                <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="DownloadUserImage" asp-route-id="@(((UserFile)ViewData["file1"]).Id)">@(((UserFile)ViewData["file1"]).Name)</a>
+            }
+
+            if (ViewData["file2"] != null)
+            {
+                <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="DownloadUserImage" asp-route-id="@(((UserFile)ViewData["file2"]).Id)">@(((UserFile)ViewData["file2"]).Name)</a>
+            }
+
+            if (ViewData["file3"] != null)
+            {
+                <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="DownloadUserImage" asp-route-id="@(((UserFile)ViewData["file3"]).Id)">@(((UserFile)ViewData["file3"]).Name)</a>
+            }
+        }
+        <form asp-controller="Admin" asp-action="EditProcess" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Payment Received: </label>
+                <div class="col-sm-9 d-flex align-items-center">
+                    <input asp-for="PaymentReceived" type="checkbox" class="form-check-input" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Site Information Received: </label>
+                <div class="col-sm-9 d-flex align-items-center">
+                    <input asp-for="SiteInformationReceived" type="checkbox" class="form-check-input" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Site Information Approved: </label>
+                <div class="col-sm-9 d-flex align-items-center">
+                    <input asp-for="SiteInformationApproved" type="checkbox" class="form-check-input" />
+                </div>
+            </div>
+            <button name="button" value="save" type="submit" class="mb-3 btn btn-primary">Save Process</button>
+            <button name="button" value="reset" type="submit" class="mb-3 btn btn-primary">Reset Process</button>
+        </form>
+    </div>
+
+    <h3 class="p-3 text-white bg-primary mb-0">Pending Exams</h3>
+    <div class="bg-white p-5">
+        <ul class="mt-4 list-group">
+            @{
+                if (ViewData["Pending"] as List<Registration> == null || (ViewData["Pending"] as List<Registration>).Count() == 0)
+                {
+                    <li class="list-group-item">Empty</li>
+                }
+
+                else
+                {
+                    foreach (var exam in ViewData["Pending"] as List<Registration>)
+                    {
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p class="font-weight-bold mb-0">@exam.Exam.Name</p>
+                                    <small class="text-muted">Expires @exam.ExpireDate.ToString()</small>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+
+    <h3 class="p-3 text-white bg-primary mb-0">Add Registration</h3>
+    <div class="bg-white p-5">
+        <form asp-controller="Admin" asp-action="EditRegistration" method="post">
+            <input type="hidden" value="@Model.Id" name="user" />
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Choose Exam: </label>
+
+                <select name="exam" class="form-control">
+
+                    @foreach (var exam in ViewData["Exams"] as List<Exam>)
+                    {
+                        <option value="@exam.Id"> @exam.Name </option>
+
+                    }
+
+                </select>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Expiration Date for Exam: </label>
+
+                <input name="expirationDate" class="form-control" type="date" id="start"
+                       value="@DateTime.Now" />
+            </div>
+
+
+
+            <button name="button" value="register" type="submit" class="mb-3 btn btn-primary">Register</button>
+        </form>
+    </div>
+
+    <h3 class="p-3 text-white bg-primary mb-0">Taken Exams</h3>
+    <div class="bg-white p-5">
+        <ul class="mt-4 list-group">
+            @{
+                if (ViewData["Previous"] as List<Registration> == null || (ViewData["Previous"] as List<Registration>).Count() == 0)
+                {
+                    <li class="list-group-item">Empty</li>
+                }
+
+                else
+                {
+                    foreach (var exam in ViewData["Previous"] as List<Registration>)
+                    {
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p class="font-weight-bold mb-0">@exam.Exam.Name</p>
+                                    <small class="text-muted">Expires @exam.ExpireDate.ToString()</small>
+                                </div>
+                                <p>@exam.Score %</p>
+                            </div>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+
+
+
+
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+
+        @if(TempData["dateError"] != null)
+        {
+            <Text>
+                alert("@TempData["dateError"]");
+            </Text>
+        }
+    </script>
+    }
