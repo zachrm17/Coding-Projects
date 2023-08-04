@@ -13,18 +13,18 @@ const Navbar = () => {
       <p className="logo-main">
         <Link href="/">Console Store</Link>
       </p>
-      <p className="logo">
-        <Link href="/allProducts">All Products</Link>
-      </p>
-      <p className="logo">
-        <Link href="/nineteenNinetys">1990s</Link>
-      </p>
-      <p className="logo">
-        <Link href="/twentyZeros">2000s</Link>
-      </p>
-      <p className="logo">
-        <Link href="/twentyTens">2010s</Link>
-      </p>
+      // <p className="logo">
+      //   <Link href="/allProducts">All Products</Link>
+      // </p>
+      // <p className="logo">
+      //   <Link href="/nineteenNinetys">1990s</Link>
+      // </p>
+      // <p className="logo">
+      //   <Link href="/twentyZeros">2000s</Link>
+      // </p>
+      // <p className="logo">
+      //   <Link href="/twentyTens">2010s</Link>
+      // </p>
       <button
         type="button"
         className="cart-icon"
