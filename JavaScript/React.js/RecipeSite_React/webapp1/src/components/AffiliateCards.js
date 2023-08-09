@@ -27,13 +27,13 @@ export function AffiliateCards() {
               src="images/helimix.jpg"
               text="Helimix"
               label="20% OFF + Free Shipping! - Code: 'RYAN'"
-              path="/"
+              path="https://helimix.com/?aff=6427"
             />
             <AffiliateCardItem
               src="images/fitbutters.jpg"
               text="Fit Butters"
               label="10% Off! - Code: 'RYAN10'"
-              path="/"
+              path="https://fitbutters.com/?platform=grin&link_id=1437727&token=3ot4sPMG0fDoEJw36CuK7JUUBrUwBjpT&contact_id=654584aa-65e8-4097-b77d-03003a33babc&attribution_window=3"
             />
           </ul>
         </div>
