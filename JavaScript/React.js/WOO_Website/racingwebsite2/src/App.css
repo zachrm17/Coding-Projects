@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* .recipes,
+.contact-us,
+.sign-up,
+.marketing,
+.consulting {
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.recipePage,
+.promotions,
+.aboutme {
+  display: flex;
+  height: 10vh;
+  padding-top: 40px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 3rem;
+} */
