@@ -15,9 +15,9 @@
   justify-content: center;
   font-size: 3rem;
 }
-
-.recipePage,
-.promotions,
+*/
+.leagues,
+.schedules,
 .aboutme {
   display: flex;
   height: 10vh;
@@ -26,4 +26,4 @@
   text-align: center;
   justify-content: center;
   font-size: 3rem;
-} */
+}

@@ -35,7 +35,7 @@ function FCL() {
             </p>
             <p>Owned by: xKingGingerx & TTV the Fink</p>
             <p>
-              <a href="https://discord.gg/BE4WMmKqT">Discord Link</a>
+              <a href="https://discord.gg/AJX6gqTp">Discord Link</a>
             </p>
           </div>
         </div>

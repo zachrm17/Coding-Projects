@@ -16,10 +16,10 @@ function HomeCards() {
               path="/Leagues"
             />
             <CardItem
-              src="images/money.jpg"
-              text="Think you're fast enough? Test your luck in Special Events!"
-              label="Special Events"
-              path="/SpecialEvents"
+              src="images/umpmod.webp"
+              text="Want custom content? Check out these creators!"
+              label="Content Creators"
+              path="/ContentCreators"
             />
           </ul>
           <ul className="cards__items">
@@ -30,10 +30,10 @@ function HomeCards() {
               path="/Schedules"
             />
             <CardItem
-              src="images/umpmod.webp"
-              text="Want custom content? Check out these creators!"
-              label="Content Creators"
-              path="/ContentCreators"
+              src="images/money.jpg"
+              text="Think you're fast enough? Test your luck in Special Events!"
+              label="Special Events"
+              path="/SpecialEvents"
             />
             {/* <CardItem
               src="images/discord.png"

@@ -6,11 +6,20 @@ import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 function ScheduleTable({ events }) {
   return (
     <>
-      <h1>Composite League Schedule for October 2023</h1>
+      <h1>Composite League Schedule for October-November 2023</h1>
+      <br></br>
+
+      <h3>
+        <a href="/Schedules">October Schedule</a> -{" "}
+        <a href="/Schedules_Nov">November Schedule (UNDER CONSTRUCTION)</a>
+      </h3>
+      <br></br>
+
       <p>
         To search for a specific league, track, or class, use the 'find' option
         in your browser.
       </p>
+
       <div className="table-container">
         <Table>
           <Thead>

@@ -10,24 +10,24 @@ function SpecialEventCards() {
         <div className="cards__wrapper">
           <ul className="cards__items">
             <CardItem
-              src="images/luau.jpg"
-              text="Lu'au at Limaland"
-              label="December 4th-6th"
-              path="/"
+              src="images/paintcountypink.jpg"
+              text="Paint the County Pink"
+              label="October 29th"
+              path="/paintcountypink"
             />
           </ul>
           <ul className="cards__items">
             <CardItem
-              src="images/icebreaker2.jpg"
-              text="2nd Annual Ice Breaker"
-              label="January 2024"
-              path="/"
+              src="images/luau.jpg"
+              text="Lu'au at Limaland"
+              label="December 4th-6th"
+              path="/luau"
             />
             <CardItem
-              src="images/nightmare.jpg"
-              text="Nightmare at Elm Creek"
-              label="October 27th"
-              path="/"
+              src="images/icebreakerbanner.png"
+              text="2nd Annual Ice Breaker"
+              label="January 2024"
+              path="/icebreaker"
             />
           </ul>
         </div>

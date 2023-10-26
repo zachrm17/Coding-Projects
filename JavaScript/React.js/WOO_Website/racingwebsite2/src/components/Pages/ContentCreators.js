@@ -1,12 +1,13 @@
 import React from "react";
+import CreatorCards from "../CreatorCards";
+import Footer from "../Footer";
 
 function ContentCreators() {
   return (
     <>
       <h1>*UNDER CONSTRUCTION*</h1>
-
-      <h1>Content Creators</h1>
-      <h1>This includes car designs, driver cards, event banners, and more!</h1>
+      <CreatorCards />
+      <Footer />
     </>
   );
 }
