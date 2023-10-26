@@ -52,10 +52,10 @@ function jessemeek() {
             <p>
               Bulldog Graphics is a well known driver card designer for the WOO
               Community! They have crafted a large portfolio and even does real
-              car/driver designs!
+              car/driver designs! Check out their FB page and message them for
+              details!
             </p>
             <p>
-              Facebook: Jesse Meek -{" "}
               <a href="https://www.facebook.com/profile.php?id=61552915673701&mibextid=LQQJ4d">
                 Facebook Page
               </a>
