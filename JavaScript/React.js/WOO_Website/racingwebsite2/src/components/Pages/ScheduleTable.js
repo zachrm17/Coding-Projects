@@ -6,12 +6,12 @@ import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 function ScheduleTable({ events }) {
   return (
     <>
-      <h1>Composite League Schedule for October-November 2023</h1>
+      <h1>Composite League Schedules</h1>
       <br></br>
 
       <h3>
         <a href="/Schedules">October Schedule</a> -{" "}
-        <a href="/Schedules_Nov">November Schedule (UNDER CONSTRUCTION)</a>
+        <a href="/Schedules_Nov">November Schedule</a>
       </h3>
       <br></br>
 

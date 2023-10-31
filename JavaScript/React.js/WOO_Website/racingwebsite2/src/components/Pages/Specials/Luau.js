@@ -16,6 +16,7 @@ function Luau() {
           <h3>Dates: December 4th-6th (8:15est/7:15cst)</h3>
           <h4>Prelim Events (Dec 4th):</h4>
           <p>- Pro Late Models</p>
+          <p>- Big Block Mods</p>
           <p>- 360 Sprint Cars</p>
           <p>- Midgets</p>
           <p>- Street Stocks</p>

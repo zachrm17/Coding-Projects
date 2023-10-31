@@ -65,7 +65,7 @@ tr:not(:first-child):not(:last-child) th {
   border-bottom-color: transparent !important;
 }
 tr:nth-child(odd) {
-  background-color: #bfbfbf; /* Light gray or your preferred color */
+  background-color: #d3d3d3; /* Light gray or your preferred color */
 }
 
 /* Apply a different background color to even rows */

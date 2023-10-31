@@ -27,7 +27,7 @@ function HomeCards() {
               src="images/calendar.jpg"
               text="View a composite schedule of the most popular leagues!"
               label="Composite Schedule"
-              path="/Schedules"
+              path="/Schedules_Nov"
             />
             <CardItem
               src="images/money.jpg"
