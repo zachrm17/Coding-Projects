@@ -11,7 +11,8 @@ function ScheduleTable({ events }) {
 
       <h3>
         <a href="/Schedules">October Schedule</a> -{" "}
-        <a href="/Schedules_Nov">November Schedule</a>
+        <a href="/Schedules_Nov">November Schedule</a> -{" "}
+        <a href="/Schedules_Dec">December Schedule</a>
       </h3>
       <br></br>
 

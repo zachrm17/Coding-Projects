@@ -3,7 +3,7 @@ import "./Navbar2.css";
 
 function Navbar2() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark custom-bg-color p-3">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-bg-color fixed-top p-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           Zachary Mietzner

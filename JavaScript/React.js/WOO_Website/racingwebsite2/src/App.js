@@ -25,6 +25,8 @@ import VDL from "./components/Pages/Leagues/VDL";
 import jessemeek from "./components/Pages/ContentCreators/jessemeek";
 import Schedules_Nov from "./components/Pages/Schedules_Nov";
 import BCRL from "./components/Pages/Leagues/BCRL";
+import FastAction from "./components/Pages/Leagues/FastAction";
+import Schedules_Dec from "./components/Pages/Schedules_Dec";
 
 function App() {
   return (
@@ -54,6 +56,8 @@ function App() {
           <Route path="/bulldog" exact Component={jessemeek} />
           <Route path="/Schedules_Nov" exact Component={Schedules_Nov} />
           <Route path="/BCRL" exact Component={BCRL} />
+          <Route path="/FastAction" exact Component={FastAction} />
+          <Route path="/Schedules_Dec" exact Component={Schedules_Dec} />
         </Routes>
       </Router>
     </>

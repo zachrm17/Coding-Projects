@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FCL_LineupMaker:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FCL_LineupMaker_jar</output-path>
+    <root id="archive" name="FCL_LineupMaker.jar">
+      <element id="module-output" name="FCL_LineupMaker" />
+    </root>
+  </artifact>
+</component>

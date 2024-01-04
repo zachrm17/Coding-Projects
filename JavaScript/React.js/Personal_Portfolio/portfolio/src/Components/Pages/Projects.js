@@ -1,7 +1,14 @@
 import React from "react";
+import Footer from "../Footer";
+import ProjectCards from "../ProjectCards";
 
 function Projects() {
-  return <div>Projects</div>;
+  return (
+    <>
+      <ProjectCards />
+      <Footer />
+    </>
+  );
 }
 
 export default Projects;

@@ -57,6 +57,12 @@ function LeagueCards() {
               label="Nightly"
               path="/SpareParts"
             />
+            <CardItem
+              src="images/fastaction.jpg"
+              text="Fast Action"
+              label="Sunday & Wednesday"
+              path="/FastAction"
+            />
           </ul>
           <ul className="cards__items">
             <CardItem

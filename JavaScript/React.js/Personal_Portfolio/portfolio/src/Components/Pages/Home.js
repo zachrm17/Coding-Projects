@@ -5,8 +5,8 @@ import Footer from "../Footer";
 function Home() {
   return (
     <>
-      <h1>Did I ask?</h1>
       <HeroSection />
+      <Footer />
     </>
   );
 }
