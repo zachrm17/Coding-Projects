@@ -30,7 +30,7 @@ function SCRA() {
           <div class="scra-about-para">
             <p>
               Competitive, action packed racing, three nights a week! Racing UMP
-              Modifieds and Xtreme Midgets on WOO & Super Streets (Ravens) on
+              Modifieds and Pro Late Models on WOO & Super Streets (Ravens) on
               Wreckfest!
             </p>
             <p>Owned by: Jdubbs2225</p>

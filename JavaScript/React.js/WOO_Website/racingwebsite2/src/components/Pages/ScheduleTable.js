@@ -10,9 +10,9 @@ function ScheduleTable({ events }) {
       <br></br>
 
       <h3>
-        <a href="/Schedules">October Schedule</a> -{" "}
-        <a href="/Schedules_Nov">November Schedule</a> -{" "}
-        <a href="/Schedules_Dec">December Schedule</a>
+        <a href="/Schedules_Dec">December 2023 Schedule</a> -{" "}
+        <a href="/Schedules_Jan">January 2024 Schedule</a> -{" "}
+        <a href="/Schedules_Feb">February 2024 Schedule</a>
       </h3>
       <br></br>
 

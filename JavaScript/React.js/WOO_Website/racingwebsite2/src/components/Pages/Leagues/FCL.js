@@ -10,7 +10,7 @@ function FCL() {
             <div>
               <div class="shadow">
                 <div class="about-img">
-                  <img src="images/FCL_Logo.png" alt="league pic" />
+                  <img src="images/fclnewlogo.png" alt="league pic" />
                 </div>
               </div>
 
@@ -25,15 +25,15 @@ function FCL() {
 
         <div class="about-right">
           <h1>FCL</h1>
-          <h2>Racing Modifieds & Late Models</h2>
+          <h2>Racing Modifieds & 360 Sprint Cars</h2>
 
           <div class="about-para">
             <p>
               Some of the best WOO Drivers race here as they try to prove whos
               the best in the Fastest, Cleanest League! Racing UMP Modifieds and
-              Super Late Models!
+              360 Sprint Cars in early 2024!
             </p>
-            <p>Owned by: xKingGingerx & TTV the Fink</p>
+            <p>Owned by: xKingGingerx & CanOfNatty</p>
             <p>
               <a href="https://discord.gg/AJX6gqTp">Discord Link</a>
             </p>

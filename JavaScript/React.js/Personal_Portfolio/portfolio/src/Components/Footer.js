@@ -10,15 +10,26 @@ function Footer() {
             <p class="d-flex justify-content-center align-items-center">
               <span class="me-3">Contact Me:</span>
               <button type="button" class="btn btn-outline-light btn-rounded">
-                <a href="mailto:zmietzner17@gmail.com" target="_blank">
+                <a
+                  href="mailto:zmietzner17@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Email
+                </a>
+              </button>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                <a href="https://www.linkedin.com/in/zachary-mietzner-389979149/">
+                  LinkedIn
                 </a>
               </button>
             </p>
           </section>
         </div>
 
-        <div class="text-center p-3">© 2023 - Devloped using React.js</div>
+        <div class="text-center p-3">
+          Developed in Late 2023 - Early 2024 using React.js
+        </div>
       </footer>
     </>
   );

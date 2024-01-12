@@ -11,9 +11,9 @@ function LeagueCards() {
         <div className="cards__wrapper">
           <ul className="cards__items">
             <CardItem
-              src="images/FCL_Logo.png"
+              src="images/fclnewlogo.png"
               text="FCL Racing League"
-              label="Sundays & Thursdays"
+              label="Thursday, Friday, Sunday"
               path="/FCL"
             />
             <CardItem
@@ -22,19 +22,25 @@ function LeagueCards() {
               label="Monday-Wednesday"
               path="/SCRA"
             />
+            <CardItem
+              src="images/nightowl.png"
+              text="Night Owl"
+              label="Fridays & Saturdays"
+              path="/NightOwl"
+            />
           </ul>
           <ul className="cards__items">
             <CardItem
-              src="images/vdl.jpg"
-              text="VDL"
-              label="Customs - Sunday/Thursday"
-              path="/VDL"
+              src="images/rwl.png"
+              text="Runnin Wild League"
+              label="Weeknights"
+              path="/RWL"
             />
             <CardItem
-              src="images/BCRL.png"
-              text="Banging Cushions Racing League"
-              label="Multiple Nights"
-              path="/BCRL"
+              src="images/twothree.jpg"
+              text="Two Three Racing Leauge"
+              label="Saturday & Sunday"
+              path="/TwoThree"
             />
             <CardItem
               src="images/ESR.jpg"
@@ -44,13 +50,6 @@ function LeagueCards() {
             />
           </ul>
           <ul className="cards__items">
-            <CardItem
-              src="images/eds.png"
-              text="Elite Dirt Series"
-              label="Sundays"
-              path="/EDS"
-            />
-
             <CardItem
               src="images/spareparts.png"
               text="Spare Parts"
@@ -63,20 +62,21 @@ function LeagueCards() {
               label="Sunday & Wednesday"
               path="/FastAction"
             />
-          </ul>
-          <ul className="cards__items">
-            <CardItem
-              src="images/rwl.png"
-              text="Runnin Wild League"
-              label="Weeknights"
-              path="/RWL"
-            />
             <CardItem
               src="images/legallimit.jpg"
               text="Legal Limit Racing"
               label="Customs"
               path="/LegalLimit"
             />
+          </ul>
+          <ul className="cards__items">
+            <CardItem
+              src="images/BCRL.png"
+              text="Banging Cushions Racing League"
+              label="Multiple Nights"
+              path="/BCRL"
+            />
+
             <CardItem
               src="images/oas.jpg"
               text="Oceaiana All Stars"

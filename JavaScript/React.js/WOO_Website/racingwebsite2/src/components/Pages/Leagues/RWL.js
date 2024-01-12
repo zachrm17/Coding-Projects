@@ -29,8 +29,8 @@ function RWL() {
 
           <div class="rwl-about-para">
             <p>
-              Up and coming league with a tight knit group of drivers racing
-              Midgets and Pro Late Models through October!
+              Competitive league with a tight knit group of drivers racing Big
+              Blocks, UMP Mods, and Late Models in early 2024!
             </p>
             <p>Owned by: Dylan14Z</p>
             <p>

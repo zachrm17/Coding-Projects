@@ -6,7 +6,6 @@ function About() {
   return (
     <>
       <AboutContent />
-      <Footer />
     </>
   );
 }
