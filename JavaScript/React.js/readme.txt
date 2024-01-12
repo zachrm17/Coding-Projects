@@ -1,0 +1,3 @@
+- Personal Portfolio is not yet completed and is in progress.
+- WOO Website is updated every other week or so, live on netlify.
+- Recipe Website is live on netlify.
