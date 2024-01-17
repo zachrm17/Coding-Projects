@@ -16,7 +16,8 @@ function AboutContent() {
     <>
       <div class="about-wrapper">
         <div class="about-left">
-          <video src="/videos/herosectionvid.mp4" autoPlay loop muted />
+          {/* <video src="/videos/herosectionvid.mp4" autoPlay loop muted /> */}
+          <img className="background-image" alt="background" loading="eager" />
 
           <div class="about-left-content">
             <div>

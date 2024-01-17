@@ -5,7 +5,7 @@ import "./ProjectCardItem.css";
 function ProjectCards() {
   return (
     <>
-      <video src="/videos/herosectionvid.mp4" autoPlay loop muted />
+      <img className="background-image" alt="background" loading="eager" />
 
       <div className="cards-wrapper">
         <div className="header">
