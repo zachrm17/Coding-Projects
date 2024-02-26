@@ -1,4 +1,4 @@
-All Web Apps above are live on Netlify
+ALL PROJECTS ABOVE ARE LIVE ON NETLIFY
 
 Portfilio Site
 
