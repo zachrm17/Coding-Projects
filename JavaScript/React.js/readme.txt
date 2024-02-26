@@ -15,4 +15,4 @@ https://wooxboxcommunity.netlify.app/
 
 Recipe Website
 
-ryanbrennerrecipes.netlify.app
+https://ryanbrennerrecipes.netlify.app
