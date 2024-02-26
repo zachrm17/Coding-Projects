@@ -1,3 +1,14 @@
-- Personal Portfolio is complete and live on Netlify
-- WOO Website is updated every other week or so, live on netlify.
-- Recipe Website is live on netlify.
+All Web Apps above are live on Netlify
+
+Portfilio Site
+
+zacharymietzner.netlify.app
+
+Chat Application
+
+https://chatapp-mietzner.netlify.app/
+- Note: Username: 'guest' password: '112233'
+
+WOO Community Website
+
+https://wooxboxcommunity.netlify.app/
