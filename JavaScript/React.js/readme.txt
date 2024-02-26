@@ -2,7 +2,7 @@ ALL PROJECTS ABOVE ARE LIVE ON NETLIFY
 
 Portfilio Site
 
-zacharymietzner.netlify.app
+https://zacharymietzner.netlify.app
 
 Chat Application
 
