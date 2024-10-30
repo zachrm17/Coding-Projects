@@ -1,0 +1,75 @@
+.menu {
+  padding: 4rem;
+  background: url("../../../public/photos/background.jpg") center center/cover
+    no-repeat;
+  min-height: 800px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.column {
+  float: left;
+  width: 33.33;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.menu_container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu_wrapper {
+  position: relative;
+  display: flex;
+  margin: 50px 0 45px;
+}
+
+.menu_wrapper ul {
+  padding-right: 2rem;
+}
+
+.menu_items {
+  text-align: center;
+  flex: 0 0 calc(33.33%);
+}
+
+.menu_items_treats {
+  text-align: center;
+  justify-content: center;
+}
+
+.menu_items_drinks {
+  text-align: center;
+  flex: 0 0 calc(25%);
+}
+
+.menu_item {
+  flex: 1;
+  margin: 0 1rem;
+  border-radius: 10px;
+}

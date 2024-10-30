@@ -1,0 +1,13 @@
+.btn a {
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+a.no-style {
+  color: #8b8b8b; /* Keeps color of the link */
+  text-decoration: none; /* Removes underline */
+}
+
+a:hover {
+  color: #ffffff; /* Darker color when hovered (adjust this as necessary) */
+}

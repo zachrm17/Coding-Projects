@@ -1,0 +1,22 @@
+.custom-bg-color {
+  background-color: #c9e4de; /* Custom color, in this case, orange */
+}
+.custom-navbar-brand {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: oblique;
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+  text-decoration: underline;
+}
+.custom-nav-item {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: oblique;
+  text-decoration: none;
+  font-size: large;
+}
+.navbar-nav .custom-nav-item .nav-link {
+  color: black; /* Change this to your desired text color */
+}
